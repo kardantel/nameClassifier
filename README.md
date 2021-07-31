@@ -1,2 +1,2 @@
 # nameClassifier
-Clasifica nombres simples o dobles en masculino o femenino
+Classify single or double names in masculine or feminine.
