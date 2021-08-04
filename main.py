@@ -5,7 +5,6 @@ __email__ = 'carlosdpimenteld@gmail.com'
 """
 
 import warnings
-import numpy as np
 from utils import Utils
 from model import NBC
 warnings.filterwarnings('ignore')
@@ -17,18 +16,35 @@ def main():
     '''
     Main function.
     '''
+    print("Training the model...")
     female = utils.fromCSVtoArray('./in/female_names.csv', 'female')
     male = utils.fromCSVtoArray('./in/male_names.csv', 'male')
     data = female + male
-    np.save('./out/names.npy', data)
+    # To save, uncomment the following line:
+    # np.save('./out/names.npy', data)
 
     data_augmented2 = utils.dataAugmentation2(data)
-    np.save('./out/dataAugmented.npy', data_augmented2)
-    # print(len(data), len(data_augmented2))
+    # To save, uncomment the following line:
+    # np.save('./out/dataAugmented.npy', data_augmented2)
 
     model = NBC(data_augmented2)
-    model.prediction('Carlos Daniel')
-    model.prediction('Laura Melisa')
+
+    while True:
+        opcion = str(input('''
+      What do you want to do?
+
+        [P]redict name
+        [e]xit
+        '''))
+
+        if opcion == 'P':
+            name = str(input("Enter the name: "))
+            model.prediction(name)
+        elif opcion == 'e':
+            print('Thanks and goodbye.')
+            break
+        else:
+            print('Command not found!')
 
 
 if __name__ == "__main__":
