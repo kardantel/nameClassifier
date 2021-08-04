@@ -33,8 +33,8 @@ def main():
         opcion = str(input('''
       What do you want to do?
 
-        [P]redict name
-        [e]xit
+        [P]redict name (male/female)
+        [e]xit program
         '''))
 
         if opcion == 'P':
