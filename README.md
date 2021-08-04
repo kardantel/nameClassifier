@@ -7,6 +7,7 @@ This repository contains the code created to classify names in Spanish for both 
 - Use the technique of data augmentation to have more training data.
 - It incorporates various functions called "atributos" (atributos1 - atributos7) with which the user can obtain various characteristics from the names entered.
 - It allows the user to enter as many names as desired until the user indicates the exit of the program.
+- When entering a male and female name at the same time, it will only recognize the first name entered from left to right.
 
 ## How to use
 1. Execute in the terminal the code `python3 main.py` this will train the classification model.
@@ -22,7 +23,7 @@ What do you want to do?
 
 #### Example
 - Try the names `Carlos` and` Laura`: A male and female names, respectively.
-- Si Introduces el nombre `Carlos`saldrá la siguiente respuesta:
+- If you enter the name `Carlos`, the following response will appear:
 
 ```python
 Enter the name: Carlos
